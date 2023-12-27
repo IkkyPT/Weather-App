@@ -1,0 +1,12 @@
+/* src/styles.css */
+body {
+  font-family: Arial, sans-serif;
+  background-color: red;
+  margin: 0;
+  padding: 0;
+}
+
+#app {
+  text-align: center;
+  padding: 50px;
+}
