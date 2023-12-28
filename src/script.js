@@ -1,3 +1,4 @@
 import './styles/style.css';
+import weather from './weather';
 
-console.log('hello world');
+weather.getWeather('Maia');

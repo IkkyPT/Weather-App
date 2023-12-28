@@ -25,7 +25,18 @@ module.exports = {
             loader: 'file-loader',
             options: {
               name: '[name].[ext]',
-              outputPath: 'images', // Specify the output directory for images
+              outputPath: 'images',
+            },
+          },
+        ],
+      },
+      {
+        test: /\.(mp4|webm)$/,
+        use: [
+          {
+            loader: 'file-loader', // or 'url-loader'
+            options: {
+              outputPath: 'videos', // Specify the output directory for videos
             },
           },
         ],
