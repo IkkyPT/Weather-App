@@ -1,3 +1,5 @@
+import loadPageUI from "./ui";
+
 const weather = (() => {
     const weatherAPI = "cdda7586614e486ea00235544232712";
   
@@ -39,8 +41,8 @@ const weather = (() => {
         name: weatherData.location.name,
         region: weatherData.location.region,
       };
-  
       console.log(data);
+      loadPageUI.weatherLoad(data);
     }
 
     return {

@@ -1,1 +1,70 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><meta name="viewport" content="width=device-width,initial-scale=1"/><title>Weather App</title><script defer="defer" src="bundle.js"></script></head><body></body></html>
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Weather App</title>
+  <script defer src="bundle.js"></script></head>
+  <body>
+    <div class="main-content">
+      <div class="header">
+        <div class="logo">
+          <i class="fa-brands fa-github-alt fa-2xl"></i>
+          <h1>IkkyPT</h1>
+        </div>
+        <div class="searchbar">
+          <form id="searchForm">
+              <input type="text" name="search" id="search" placeholder="search.." autocomplete="off">
+              <button class="searchBtn" type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+          </form>
+        </div>
+        <div class="settings">
+          <button class="settings-metric">°C, m/s</button>
+          <button class="settings-imperial">°F, mph</button>
+        </div>
+      </div>
+      <div class="overlay"></div>
+      <div class="weatherMain">
+        <div class="sectionHead">
+          <h2>
+            <span class="data-city"></span>, <span class="data-country"></span>
+          </h2>
+          <p class="data-time"></p>
+        </div>
+        <div class="bottomWrapper">
+          <div class="sectionWeather">
+            <div class="sectionWeatherTop">
+              <img class="data-icon"></img>
+              <span class="data-temp"></span>
+            </div>
+            <div class="sectionWeatherBottom">
+              <p class="data-feel"></p>
+            </div>
+          </div>
+          <div class="sectionDetails">
+            <div class="sectionDetailsHumidity">
+              <p class="detailsTitle">Humidity</p>
+              <p class="detailsData"><span class="data-humidity"></span>%</p>
+            </div>
+            <div class="sectionDetailsGust">
+              <p class="detailsTitle">Gust</p>
+              <p class="detailsData"><span class="data-gust"></span>kph</p>
+            </div>
+            <div class="sectionDetailsWind">
+              <p class="detailsTitle">Wind</p>
+              <p class="detailsData"><span class="data-wind"></span>kph</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="footer">
+        <p>Copyright ©</p>
+        <script>document.write(new Date().getFullYear())</script>
+        <span>IkkyPT</span>
+        <i class="fa-brands fa-github fa-2x"></i>
+      </div>
+    </div>
+    <script src="https://kit.fontawesome.com/99f34af06c.js" crossorigin="anonymous"></script>
+  </body>
+</html>
