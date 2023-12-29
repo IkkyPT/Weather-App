@@ -1,11 +1,24 @@
 import videoSource from './images/ocean.mp4';
+import weather from './weather';
 
 const loadPageUI = (() => {
     function initialLoad(){
         loadBg();
+        loadEvent();
+    }
+
+    function loadEvent() {
+        const searchForm = document.getElementById('searchForm');
+
+        searchForm.addEventListener('submit', (event) => {
+            event.preventDefault();
+            search();
+        })
+
     }
 
     function loadBg(){
+        const pageBody = document.querySelector('.main-content');
         const videoContainer = document.createElement('div');
         videoContainer.id = 'video-container';
 
@@ -16,12 +29,24 @@ const loadPageUI = (() => {
         videoBg.loop = true;
 
         videoContainer.appendChild(videoBg);
-        document.body.appendChild(videoContainer);
+        pageBody.appendChild(videoContainer);
+    }
+
+    function weatherLoad(data){
+
+    }
+
+    function search(){
+        const userSearch = document.getElementById('search');
+        const userSearchValue = userSearch.value;
+
+        weather.getWeather(userSearchValue);
     }
 
     return {
         initialLoad,
+        search,
     }
 })()
 
-export default loadPageUI
+export default loadPageUI;
