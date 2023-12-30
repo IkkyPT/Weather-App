@@ -55,13 +55,33 @@
   gap: 1rem;
 }
 
-#searchForm > * {
+#searchForm {
+  display: flex;
+  gap: 10px;
+}
+
+.inputContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.inputContainer > * {
   background-color: var(--trans-sec-color);
   height: 40px;
   border: none;
   font-size: 18px;
   color: var(--main-color);
   transition: border 0.3s;
+}
+
+.inputContainer .errorMsg {
+  border: 2px solid var(--main-color);
+  border-radius: 20px;
+  padding: 4px 16px 4px 16px;
+  color: var(--main-color);
+  background-color: rgba(255, 0, 0, 0.582);
+  visibility: hidden;
 }
 
 #searchForm input {
@@ -78,7 +98,11 @@
   line-height: 1;
   border-radius: 20px; /* Set the same border-radius for both input and button */
   border: 2px solid var(--main-color);
+  height: 40px;
+  background-color: var(--trans-sec-color);
+  color: var(--main-color);
 }
+
 
 [class^='settings-'] {
   font-family: 'Nunito', sans-serif;
@@ -93,6 +117,12 @@
   border-radius: 20px;
   border: 2px solid var(--main-color);
   color: var(--main-color);
+  font-size: 18px;
+}
+
+.settings > button:hover:active {
+  background-color: var(--main-color);
+  color: var(--sec-color);
 }
 
 #video-container {
@@ -115,7 +145,7 @@ video {
 
 .weatherMain {
   min-height: 400px;
-  max-width: 600px;
+  max-width: 700px;
   background-color: var(--trans-sec-color);
   border-radius: 10px;
   color: var(--main-color);
