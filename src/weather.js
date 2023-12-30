@@ -4,16 +4,27 @@ const weather = (() => {
     const weatherAPI = "cdda7586614e486ea00235544232712";
   
     async function getWeather(location) {
+      // Fetch current weather data from the weatherApi
       try {
         const response = await fetch(`https://api.weatherapi.com/v1/current.json?key=${weatherAPI}&q=${location}`, { mode: "cors" },);
+
+        if(!response.ok) {
+          throw new Error(`Failed to fetch data. Status: ${response.status}`);
+        }
+
         const weatherData = await response.json();
         processData(weatherData);
       } catch (error) {
-        console.log(error);
+        loadPageUI.throwError(); // Handle errors by displaying an error message
       }
     }
   
     function processData(weatherData) {
+      if (!weatherData || !weatherData.current || !weatherData.location) {
+        return; // Exit if the required data is missing
+      }
+
+      // Extract relevant weather information for display
       const data = {
         condition: [
           weatherData.current.condition.text,
@@ -41,8 +52,8 @@ const weather = (() => {
         name: weatherData.location.name,
         region: weatherData.location.region,
       };
-      console.log(data);
-      loadPageUI.weatherLoad(data);
+
+      loadPageUI.weatherLoad(data); // Update the UI with the weather information
     }
 
     return {
